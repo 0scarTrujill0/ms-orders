@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-orders-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-orders-api
+  template:
+    metadata:
+      labels:
+        app: ms-orders-api
+    spec:
+      containers:
+        - name: ms-orders-api
+          image: ms-orders-api:latest-local
+          ports:
+            - containerPort: 3000 # Puerto en el que tu aplicación está escuchando
+          resources:
+            limits:
+              cpu: "0.5" # Límite de CPU en 0.5 unidades (puedes ajustar esto)
+              memory: "512Mi" # Límite de memoria en 512 megabytes (puedes ajustar esto)
+            requests:
+              cpu: "0.2" # Recursos mínimos de CPU requeridos (puedes ajustar esto)
+              memory: "256Mi" # Recursos mínimos de memoria requeridos (puedes ajustar esto)
