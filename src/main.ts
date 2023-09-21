@@ -20,8 +20,8 @@ async function bootstrap() {
 
   SwaggerModule.setup('api/orders/doc', app, document);
 
-  console.log('runing in port ' + process.env.PORT || 3000);
-  await app.listen(process.env.PORT || 3000);
+  console.log('runing in port ' + process.env.PORT || 3001);
+  await app.listen(process.env.PORT || 3001);
 }
 
 bootstrap();

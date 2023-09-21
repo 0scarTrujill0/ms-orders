@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-
 import { MongooseModule } from '@nestjs/mongoose';
 import { OrdersModule } from './orders/orders.module';
 
@@ -12,7 +11,7 @@ import { OrdersModule } from './orders/orders.module';
         useUnifiedTopology: true,
       }),
     }),
-    OrdersModule
+    OrdersModule,
   ],
   controllers: [],
   providers: [],
